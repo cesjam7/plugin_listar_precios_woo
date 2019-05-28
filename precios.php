@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Butrich - Revisar Precios
+Plugin Name: Butrich - Revisar Productos
 Description: Módulo para revisar rápidamente los precios.
 Version: 1.0
 Author: César Aquino Maximiliano

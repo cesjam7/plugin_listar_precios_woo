@@ -9,8 +9,8 @@ class Precios {
 
         add_submenu_page(
             'tools.php',
-            __( 'Revisar precios', 'revisar_precios' ),
-            __( 'Revisar precios', 'revisar_precios' ),
+            __( 'Revisar productos', 'revisar_precios' ),
+            __( 'Revisar productos', 'revisar_precios' ),
             'manage_options',
             'revisar-precios',
             array($this, 'page_options')
@@ -30,12 +30,13 @@ class Precios {
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
-                    <th scope="col" class="manage-column column-author" width="15%">ID</th>
-                    <th scope="col" class="manage-column column-author" width="15%">SKU</th>
-                    <th scope="col" class="manage-column column-author" width="25%">Producto</th>
-                    <th scope="col" class="manage-column column-author" width="15%">Precio Perú</th>
-                    <th scope="col" class="manage-column column-author" width="15%">Precio Latam</th>
-                    <th scope="col" class="manage-column column-author" width="15%">Precio Mundo</th>
+                    <th scope="col" class="manage-column column-author" width="13%">ID</th>
+                    <th scope="col" class="manage-column column-author" width="13%">SKU</th>
+                    <th scope="col" class="manage-column column-author" width="22%">Producto</th>
+                    <th scope="col" class="manage-column column-author" width="13%">Precio Perú</th>
+                    <th scope="col" class="manage-column column-author" width="13%">Precio Latam</th>
+                    <th scope="col" class="manage-column column-author" width="13%">Precio Mundo</th>
+                    <th scope="col" class="manage-column column-author" width="13%">Stock</th>
                 </tr>
             </thead>
             <tbody id="the-list">
@@ -52,6 +53,7 @@ class Precios {
                         <td class="author column-author">S/.<?php echo get_post_meta($idproduct, '_price', true); ?></td>
                         <td class="author column-author">$<?php echo get_post_meta($idproduct, '_latinoamerica_price', true); ?></td>
                         <td class="author column-author">$<?php echo get_post_meta($idproduct, '_todo-el-mundo_price', true); ?></td>
+                        <td class="author column-author">SUPERIOR</td>
                     </tr>
                     <?php $handle = new WC_Product_Variable($idproduct);
                     $variations = $handle->get_children();
@@ -66,6 +68,7 @@ class Precios {
                                 <td class="author column-author">S/.<?php echo get_post_meta($idvariable, '_price', true); ?></td>
                                 <td class="author column-author">$<?php echo get_post_meta($idvariable, '_latinoamerica_price', true); ?></td>
                                 <td class="author column-author">$<?php echo get_post_meta($idvariable, '_todo-el-mundo_price', true); ?></td>
+                                <td class="author column-author"><?php echo get_post_meta($idvariable, '_stock', true); ?></td>
                             </tr>
                         <?php }
                     }
