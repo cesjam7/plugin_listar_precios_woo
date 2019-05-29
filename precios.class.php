@@ -68,7 +68,7 @@ class Precios {
                                 <td class="author column-author">S/.<?php echo get_post_meta($idvariable, '_price', true); ?></td>
                                 <td class="author column-author">$<?php echo get_post_meta($idvariable, '_latinoamerica_price', true); ?></td>
                                 <td class="author column-author">$<?php echo get_post_meta($idvariable, '_todo-el-mundo_price', true); ?></td>
-                                <td class="author column-author"><?php echo get_post_meta($idvariable, '_stock', true); ?></td>
+                                <td class="author column-author"><?php echo round(get_post_meta($idvariable, '_stock', true)); ?></td>
                             </tr>
                         <?php }
                     }
